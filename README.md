@@ -1,15 +1,3 @@
-name = "debug_generic"
-description = "Generic debug output package for bare-metal Ada applications"
-version = "0.1.0-dev"
-
-authors = ["Olivier Henley"]
-maintainers = ["Olivier Henley <olivier.henley@gmail.com>"]
-maintainers-logins = ["ohenley"]
-licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
-website = "https://github.com/ohenley/baremetal_ada"
-tags = ["embedded", "bare-metal", "debug", "logging", "uart", "generic"]
-long-description = """
-
 # debug_generic
 
 Generic debug output package for bare-metal Ada applications.
@@ -97,6 +85,15 @@ Register value: 0xDEADBEEF
 Counter:  42
 ```
 
+## Integration
+
+Add to your `alire.toml`:
+
+```toml
+[[depends-on]]
+debug_generic = "^0.1.0"
+```
+
 ## Design Rationale
 
 The generic approach decouples debug output from specific hardware implementations, enabling:
@@ -107,4 +104,6 @@ The generic approach decouples debug output from specific hardware implementatio
 - No dynamic dispatch or virtual function calls
 - Hierarchical instantiation for multi-level debugging
 
-"""
+## License
+
+MIT OR Apache-2.0 WITH LLVM-exception
